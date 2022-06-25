@@ -27,7 +27,7 @@ void driveLeft()
   motA.moveTo(lc);
   motA.runToPosition();
   lc += directIon*stepsL;
-  if(lc > 800)
+  if(lc > 600 || lc < -600)
   {
     lc = stepsL;
     motA.setCurrentPosition(0);
@@ -50,7 +50,7 @@ void driveRight()
   motB.moveTo(rc);
   motB.runToPosition();
   rc -= directIon*stepsR;
-  if(rc < -800)
+  if(rc < -600 || rc > 600)
   {
     rc = -stepsR;
     motB.setCurrentPosition(0);
